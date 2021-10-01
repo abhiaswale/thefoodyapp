@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 88.5%;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(12, 12, 12, 0.568);
+  padding: 5px 88.3px;
+}
+.title {
+  color: white;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+}
+.header li {
+  margin: 0 1rem;
+}
+.header a {
+  text-decoration: none;
+  color: white;
+}
