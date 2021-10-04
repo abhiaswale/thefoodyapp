@@ -1,26 +1,26 @@
-import React, { useRef, Fragment } from "react";
+import React, { useRef, Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import classes from "./SignUp.module.css";
+import foodBg from "../Components/images/foodbg31.jpg";
 const SignUp = () => {
-  // const [isSignUp, setIsSignUp] = useState(true);
+  const [isSigningUp, setIsSigningUp] = useState(false);
   const nameRef = useRef();
   const emailRef = useRef();
   const choosePasswordRef = useRef();
   const confirmPasswordRef = useRef();
-  let passwordMatch = true;
+  // let passwordMatch = true;
   let userId;
 
   const formSubmissionHandler = (e) => {
+    setIsSigningUp(true);
     e.preventDefault();
     const enteredName = nameRef.current.value;
     const enteredEmail = emailRef.current.value;
     const enteredChoosePassword = choosePasswordRef.current.value;
     const enteredConfirmPassword = confirmPasswordRef.current.value;
     if (enteredChoosePassword !== enteredConfirmPassword) {
-      passwordMatch = false;
       alert("passwords do not match");
     }
-
     /////////////Signing up the user
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCo1KQ55TDors5RWaJW39O6qsneUZdIGCk",
@@ -35,6 +35,7 @@ const SignUp = () => {
       }
     )
       .then((res) => {
+        setIsSigningUp(false);
         if (res.ok) {
           return res.json();
         } else {
@@ -79,6 +80,9 @@ const SignUp = () => {
   };
   return (
     <Fragment>
+      <div className={classes.imgtag}>
+        <img src={foodBg} alt="img" />
+      </div>
       <form onSubmit={formSubmissionHandler} className={classes.signup}>
         <h2>SignUp</h2>
         <div className={classes.inputdiv}>
@@ -120,12 +124,13 @@ const SignUp = () => {
               ref={confirmPasswordRef}
             />
           </div>
-          {!passwordMatch && (
+          {/* {!passwordMatch && (
             <p style={{ textAlign: "center" }}>Passwords do not match</p>
-          )}
+          )} */}
         </div>
         <div>
-          <button>Sign Up</button>
+          {!isSigningUp && <button>Sign Up</button>}
+          {isSigningUp && <button>Signing you up...</button>}
         </div>
         <p>
           Existing user? <Link to="/login">Login</Link>

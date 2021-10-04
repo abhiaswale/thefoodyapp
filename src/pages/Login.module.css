@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+.container{
+  background-image: url('../images/foodbg3.jpg');
+}
 .login {
   font-family: "Montserrat", sans-serif;
   width: 20rem;
@@ -7,17 +10,21 @@
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(17, 15, 15, 0.493);
+  background-color: rgba(17, 15, 15, 0.849);
   padding: 26px 32px;
   border-radius: 8px;
 }
 
 .login h2 {
+  color: white;
   font-size: 2.4rem;
   text-align: center;
 }
 .inputdiv {
   margin-top: 15px;
+}
+.login label {
+  color: white;
 }
 
 .login input {
@@ -30,7 +37,7 @@
   outline: 0;
   border: 0;
   background: transparent;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 .login button {
   font-family: "Montserrat", sans-serif;

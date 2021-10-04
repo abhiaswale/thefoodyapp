@@ -1,11 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 // import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-
+import foodBg2 from "../Components/images/foodbg1.jpg";
 import classes from "./Login.module.css";
+import AuthContext from "../store/auth-context";
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [userData, setUserData] = useState({});
+  // const [userData, setUserData] = useState({});
+  const authCtx = useContext(AuthContext);
 
   // const history = useHistory();
   const userNameRef = useRef();
@@ -43,7 +45,9 @@ const Login = () => {
         }
       })
       .then((result) => {
-        // console.log(result.localId);
+        // console.log("hi");
+        console.log(result);
+        authCtx.login(result.idToken);
         logId = result.localId;
         return logId;
       })
@@ -67,9 +71,7 @@ const Login = () => {
                 });
               }
             }
-            setUserData(userInfo);
-            console.log(userInfo);
-            console.log(userData);
+            authCtx.name(userInfo[0].firstName);
           });
       });
 
@@ -77,7 +79,8 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="container">
+      <img src={foodBg2} alt="imagee" />
       <form onSubmit={formSubmissionHandler} className={classes.login}>
         <h2>Login</h2>
         <div className={classes.inputdiv}>
@@ -114,6 +117,7 @@ const Login = () => {
         </div>
         <p>
           New user? <Link to="/signup">Signup</Link>
+          <Link to="/landingpage"> landing Page</Link>
         </p>
       </form>
     </div>

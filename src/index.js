@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-
+import { AuthContextProvider } from "../src/store/auth-context";
 ReactDOM.render(
-  <React.StrictMode>
+  <AuthContextProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </AuthContextProvider>,
   document.getElementById("root")
 );
 
