@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
-// import { useHistory } from "react-router";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import foodBg2 from "../Components/images/foodbg1.jpg";
+import foodBg2 from "../images/foodbg31.jpg";
 import classes from "./Login.module.css";
 import AuthContext from "../store/auth-context";
 const Login = () => {
@@ -9,7 +9,7 @@ const Login = () => {
   // const [userData, setUserData] = useState({});
   const authCtx = useContext(AuthContext);
 
-  // const history = useHistory();
+  const history = useHistory();
   const userNameRef = useRef();
   const passwordRef = useRef();
   let logId;
@@ -33,13 +33,13 @@ const Login = () => {
       }
     )
       .then((res) => {
-        setIsLoading(false);
         if (res.ok) {
           return res.json();
-          // history.push("/landingpage");
         } else {
-          return res.json.then((data) => {
-            let errorMessage = "Something went wrong";
+          return res.json().then((data) => {
+            console.log(data);
+            // let errorMessage = "Something went wrong";
+            let errorMessage = data.error.message;
             throw new Error(errorMessage);
           });
         }
@@ -60,9 +60,15 @@ const Login = () => {
           "https://foodyproject-baf67-default-rtdb.firebaseio.com/Users.json"
         )
           .then((res) => {
-            return res.json();
+            if (res.ok) {
+              return res.json();
+            } else {
+              throw new Error("Something went wrong!!!");
+            }
           })
           .then((data) => {
+            setIsLoading(false);
+
             const userInfo = [];
             for (const key in data) {
               if (logId === data[key].id) {
@@ -72,15 +78,18 @@ const Login = () => {
               }
             }
             authCtx.name(userInfo[0].firstName);
+            history.push("/landingpage");
+          })
+          .catch((err) => {
+            console.log(err);
           });
       });
 
     // console.log(enteredEmail, enteredPassword);
   };
-
   return (
-    <div className="container">
-      <img src={foodBg2} alt="imagee" />
+    <div className="container" style={{ backgroundImage: `url(${foodBg2})` }}>
+      {/* <img src={foodBg2} alt="imagee" /> */}
       <form onSubmit={formSubmissionHandler} className={classes.login}>
         <h2>Login</h2>
         <div className={classes.inputdiv}>

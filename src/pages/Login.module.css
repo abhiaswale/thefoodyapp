@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-.container{
-  background-image: url('../images/foodbg3.jpg');
+.container {
+  background-image: url("../images/foodbg3.jpg");
 }
 .login {
-  font-family: "Montserrat", sans-serif;
   width: 20rem;
   height: 25rem;
   position: absolute;

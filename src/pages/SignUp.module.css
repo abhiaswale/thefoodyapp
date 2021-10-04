@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-
 .signup {
-  font-family: "Montserrat", sans-serif;
   width: 20rem;
   height: 30rem;
   position: absolute;
@@ -27,7 +24,6 @@
 }
 
 .signup input {
-  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   padding: 6px 4px;
   color: white;
@@ -40,7 +36,7 @@
   border-bottom: 1px solid black;
 }
 .signup button {
-  font-family: "Montserrat", sans-serif;
+  font-family: inherit;
   cursor: pointer;
   width: 100%;
   margin-top: 45px;
@@ -50,13 +46,6 @@
   padding: 7px 12px;
 }
 
-.imgtag {
-  /* margin: 0 auto; */
-  /* padding: 0; */
-  /* position: relative; */
-  /* height: auto; */
-  /* background-size: 50%; */
-}
 .imgtag img {
   height: 400 px;
   width: 100;

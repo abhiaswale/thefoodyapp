@@ -1,21 +1,42 @@
-.imgtag {
+.bg {
   /* margin: 0 auto; */
   /* padding: 0; */
-  position: relative;
+  /* position: absolute; */
   /* height: auto; */
-  background-size: 50%;
+  background-size: 100%;
+  background-color: aqua;
 }
 .imgtag img {
-  height: 400 px;
+  /* position: absolute; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80%;
   width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  filter: brightness(50%);
+  transform: skewY(-6deg);
+  transform-origin: top left;
 }
 
 .text {
   font-size: 5rem;
   font-weight: 900;
-  color: white;
-  position: absolute;
+  color: rgb(8, 8, 8);
+  /* position: absolute; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -90%);
+}
+.columnwrapper {
+  background-color: yellowgreen;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  text-align: center;
 }

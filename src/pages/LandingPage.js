@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import AuthContext from "../store/auth-context";
+import classes from "./LandingPage.module.css";
 
 const LandingPage = () => {
   const authCtx = useContext(AuthContext);
@@ -7,8 +8,10 @@ const LandingPage = () => {
   console.log(authCtx.userName);
 
   return (
-    <div>
-      <h1>Welcome, {authCtx.userName}</h1>
+    <div className={classes.p}>
+      <p>
+        Welcome, <span>{authCtx.userName}</span>
+      </p>
     </div>
   );
 };

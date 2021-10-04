@@ -4,8 +4,6 @@ import AuthContext from "../../store/auth-context";
 import { useContext } from "react";
 const Navigation = () => {
   const authCtx = useContext(AuthContext);
-  // console.log(authCtx.isLoggedIn);
-  // console.log(authCtx.userName);
   const logoutHandler = () => {
     authCtx.logut();
   };
@@ -21,6 +19,15 @@ const Navigation = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
+            <li>
+              <Link to="/">Menu</Link>
+            </li>
+            <li>
+              <Link to="/">About Us</Link>
+            </li>
+            <li>
+              <Link to="/">Book a Table </Link>
+            </li>
             {!authCtx.isLoggedIn && (
               <li>
                 <Link to="/login">Login</Link>
@@ -28,12 +35,16 @@ const Navigation = () => {
             )}
             {authCtx.isLoggedIn && (
               <li>
-                <button onClick={logoutHandler}>Logout</button>
+                <button className={classes.b1} onClick={logoutHandler}>
+                  Logout
+                </button>
               </li>
             )}
-            <li>
-              <Link to="/signup">SignUp</Link>
-            </li>
+            {!authCtx.isLoggedIn && (
+              <li>
+                <Link to="/signup">Signup</Link>
+              </li>
+            )}
           </ul>
         </nav>
       </div>

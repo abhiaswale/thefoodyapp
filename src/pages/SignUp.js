@@ -1,7 +1,7 @@
 import React, { useRef, Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import classes from "./SignUp.module.css";
-import foodBg from "../Components/images/foodbg31.jpg";
+import foodBg from "../images/foodbg31.jpg";
 const SignUp = () => {
   const [isSigningUp, setIsSigningUp] = useState(false);
   const nameRef = useRef();

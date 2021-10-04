@@ -1,0 +1,10 @@
+.p {
+  position: absolute;
+  top: 120px;
+  left: 50px;
+  font-size: 3rem;
+}
+
+.p span {
+  font-weight: 900;
+}
