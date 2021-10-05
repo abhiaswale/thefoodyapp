@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
+.bg {
+  position: relative;
+  background-image: url("../../images//menubg.jpg");
+  height: 721px;
+}
+
+.menu {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.menuheader {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.menu p {
+  color: red;
+  font-size: 2rem;
+  font-family: "Allura", cursive;
+}
+
+.menu h1 {
+}

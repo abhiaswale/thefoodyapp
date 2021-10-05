@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import { useContext } from "react";
 import AuthContext from "./store/auth-context";
 import BookATable from "./pages/BookATable";
+import Menu from "./Components/Menu/Menu";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUp />
+          </Route>
+          <Route path="/menu">
+            <Menu />
           </Route>
 
           <Route path="/landingpage">
