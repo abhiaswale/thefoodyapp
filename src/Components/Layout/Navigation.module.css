@@ -1,9 +1,10 @@
 .header {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 88.5%;
-  /* position: absolute; */
+  width: 100%;
+  position: absolute;
   z-index: 1;
   background-color: rgba(12, 12, 12, 0.568);
   padding: 5px 88.3px;

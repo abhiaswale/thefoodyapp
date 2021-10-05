@@ -1,0 +1,62 @@
+.bg {
+  background-image: url("../images/reservationbg.jpg");
+  width: 100%;
+  height: 900px;
+  background-size: cover;
+  position: relative;
+}
+/* .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+} */
+
+.book {
+  width: 35em;
+  height: 43rem;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(17, 15, 15, 0.849);
+  padding: 26px 32px;
+  border-radius: 8px;
+}
+.book h2 {
+  color: white;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.inputdiv {
+  margin-top: 15px;
+}
+.book label {
+  color: white;
+}
+
+.book input,
+select {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  padding: 6px 4px;
+  margin-top: 8px;
+  width: 98%;
+  align-items: center;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.book button {
+  font-family: inherit;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 45px;
+  border-radius: 30px;
+  border: transparent;
+  font-size: 1.2rem;
+  padding: 7px 12px;
+}

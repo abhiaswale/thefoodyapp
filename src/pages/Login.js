@@ -1,7 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import foodBg2 from "../images/foodbg31.jpg";
 import classes from "./Login.module.css";
 import AuthContext from "../store/auth-context";
 const Login = () => {
@@ -88,8 +87,7 @@ const Login = () => {
     // console.log(enteredEmail, enteredPassword);
   };
   return (
-    <div className="container" style={{ backgroundImage: `url(${foodBg2})` }}>
-      {/* <img src={foodBg2} alt="imagee" /> */}
+    <div className={classes.bg}>
       <form onSubmit={formSubmissionHandler} className={classes.login}>
         <h2>Login</h2>
         <div className={classes.inputdiv}>
@@ -124,7 +122,7 @@ const Login = () => {
           {!isLoading && <button>LOGIN</button>}
           {isLoading && <button>Logging you in...</button>}
         </div>
-        <p>
+        <p style={{ color: "white" }}>
           New user? <Link to="/signup">Signup</Link>
           <Link to="/landingpage"> landing Page</Link>
         </p>

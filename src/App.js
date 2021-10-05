@@ -7,6 +7,7 @@ import Layout from "./Components/Layout/Layout";
 import LandingPage from "./pages/LandingPage";
 import { useContext } from "react";
 import AuthContext from "./store/auth-context";
+import BookATable from "./pages/BookATable";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -27,6 +28,9 @@ function App() {
           <Route path="/landingpage">
             {authCtx.isLoggedIn && <LandingPage />}
             {!authCtx.isLoggedIn && <Redirect to="/login" />}
+          </Route>
+          <Route path="/tablebooking">
+            <BookATable />
           </Route>
 
           <Route path="*">

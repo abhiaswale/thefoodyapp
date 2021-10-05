@@ -79,10 +79,7 @@ const SignUp = () => {
     );
   };
   return (
-    <Fragment>
-      <div className={classes.imgtag}>
-        <img src={foodBg} alt="img" />
-      </div>
+    <div className={classes.bg}>
       <form onSubmit={formSubmissionHandler} className={classes.signup}>
         <h2>SignUp</h2>
         <div className={classes.inputdiv}>
@@ -124,9 +121,6 @@ const SignUp = () => {
               ref={confirmPasswordRef}
             />
           </div>
-          {/* {!passwordMatch && (
-            <p style={{ textAlign: "center" }}>Passwords do not match</p>
-          )} */}
         </div>
         <div>
           {!isSigningUp && <button>Sign Up</button>}
@@ -136,7 +130,7 @@ const SignUp = () => {
           Existing user? <Link to="/login">Login</Link>
         </p>
       </form>
-    </Fragment>
+    </div>
   );
 };
 

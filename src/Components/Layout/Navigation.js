@@ -26,7 +26,7 @@ const Navigation = () => {
               <Link to="/">About Us</Link>
             </li>
             <li>
-              <Link to="/">Book a Table </Link>
+              <Link to="/tablebooking">Book a Table </Link>
             </li>
             {!authCtx.isLoggedIn && (
               <li>

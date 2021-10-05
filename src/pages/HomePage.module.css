@@ -1,42 +1,128 @@
 .bg {
-  /* margin: 0 auto; */
-  /* padding: 0; */
-  /* position: absolute; */
-  /* height: auto; */
-  background-size: 100%;
-  background-color: aqua;
-}
-.imgtag img {
-  /* position: absolute; */
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80%;
+  background-image: url("../images/foodbg3.jpg");
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  filter: brightness(50%);
-  transform: skewY(-6deg);
-  transform-origin: top left;
+  height: 716px;
+  background-size: cover;
+  position: relative;
 }
-
 .text {
   font-size: 5rem;
   font-weight: 900;
-  color: rgb(8, 8, 8);
-  /* position: absolute; */
+  color: rgb(3, 3, 3);
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -90%);
+  transform: translate(-50%, -100%);
 }
-.columnwrapper {
-  background-color: yellowgreen;
-  padding: 20px 25px;
-  display: flex;
-  justify-content: center;
+.bg p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 180%);
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.headerbutton {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 180%);
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border: 2px solid white;
+  background: transparent;
+  padding: 8px;
 }
 
+.columnwrapper {
+  background-color: rgb(224, 241, 188);
+  height: 165px;
+  padding: 90px 125px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.ico {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
 .column {
   text-align: center;
+}
+
+.column text {
+  font-size: 2rem;
+}
+
+.contactwrapper h1 {
+  text-align: center;
+}
+
+.addresswrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 12px 130px;
+}
+
+.addressform input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 6px 4px;
+  color: rgb(7, 7, 7);
+  margin-top: 46px;
+  right: 2px;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+  gap: 2px;
+}
+
+.send {
+  text-align: center;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 45px;
+  border-radius: 30px;
+  border: transparent;
+  font-size: 1rem;
+  padding: 7px 12px;
+}
+
+.address address {
+  margin-bottom: 25px;
+}
+
+.iconswrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.iconswrapper div {
+  display: flex;
+  align-content: center;
+  gap: 5px;
+}
+
+.footericon {
+  display: flex;
+  justify-content: center;
+  gap: 52px;
+  font-size: 2rem;
+  margin: 25px 0px 25px 0px;
+}
+
+.footericon a {
+  color: black;
+  text-decoration: none;
+}
+
+.copyrightwrapper {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 18px;
 }

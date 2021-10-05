@@ -1,3 +1,11 @@
+.bg {
+  background-image: url("../images/foodbg1.jpg");
+  width: 100%;
+  height: 721px;
+  background-size: cover;
+  position: relative;
+}
+
 .signup {
   width: 20rem;
   height: 30rem;
@@ -19,7 +27,8 @@
 .inputdiv {
   margin-top: 15px;
 }
-.signup label {
+.signup label,
+p {
   color: white;
 }
 
@@ -33,7 +42,7 @@
   outline: 0;
   border: 0;
   background: transparent;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 .signup button {
   font-family: inherit;
@@ -44,9 +53,4 @@
   border: transparent;
   font-size: 1.2rem;
   padding: 7px 12px;
-}
-
-.imgtag img {
-  height: 400 px;
-  width: 100;
 }
