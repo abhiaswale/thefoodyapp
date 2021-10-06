@@ -5,12 +5,6 @@
   background-size: cover;
   position: relative;
 }
-/* .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-} */
-
 .book {
   width: 35em;
   height: 43rem;

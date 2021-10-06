@@ -32,6 +32,7 @@ const Menu = () => {
   const mealList = meals.map((meal) => (
     <MenuItem
       id={meal.id}
+      key={meal.id}
       name={meal.name}
       description={meal.description}
       price={meal.price}
@@ -39,12 +40,14 @@ const Menu = () => {
   ));
   return (
     <div className={classes.bg}>
-      <div className={classes.menu}>
+      <div className={classes.content}>
         <div className={classes.menuheader}>
           <p>Find</p>
-          <h1>Our Menu</h1>
+          <span>Our Menu</span>
         </div>
-        <ul>{mealList}</ul>
+        <div className={classes.menu}>
+          <ul>{mealList}</ul>
+        </div>
       </div>
     </div>
   );

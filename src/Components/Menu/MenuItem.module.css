@@ -1,10 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap");
 .main {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  gap: 40px;
+  gap: 400px;
+}
+.main h3 {
+  color: rgb(255, 255, 255);
+  font-family: "Georama", sans-serif;
+  font-size: 1rem;
 }
 
-.main p {
-  color: white;
+.main section div {
+  color: rgb(229, 255, 0);
   font-size: 1.4rem;
 }
