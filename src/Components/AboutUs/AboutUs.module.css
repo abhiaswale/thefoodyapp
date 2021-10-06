@@ -1,7 +1,47 @@
 .bg {
-  background-image: url("../../images/aboutus.jpg");
+  background-image: url("../../images/aboutus1.jpg");
   width: 100%;
-  height: 716px;
+  height: 490px;
   background-size: cover;
   position: relative;
+  transform: skewY(-6deg);
+  transform-origin: top left;
+}
+
+.aboutus {
+  color: white;
+  font-size: 5rem;
+  font-weight: 900;
+  top: 25%;
+  left: 60%;
+  transform: skewY(6deg);
+  position: absolute;
+}
+
+.aboutusHeader {
+  /* background-color: aqua;
+  height: 150px; */
+  display: block;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 900;
+  font-style: italic;
+}
+.aboutsection {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutusContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: contain;
+  width: 65%;
+  gap: 0px;
+  margin-top: -4px;
+}
+.aboutusContent img {
+  width: 100%;
+  height: auto;
 }

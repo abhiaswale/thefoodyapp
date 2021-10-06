@@ -17,6 +17,7 @@ import { useHistory } from "react-router";
 const HomePage = () => {
   const history = useHistory();
   const [isFeedbackGiven, setIsFeedbackGiven] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
@@ -37,8 +38,15 @@ const HomePage = () => {
 
   const feedBackHandler = (e) => {
     e.preventDefault();
-    setIsFeedbackGiven(true);
-    console.log(name, email, msg);
+
+    if (
+      name.trim().length === 0 &&
+      email.trim().length === 0 &&
+      msg.trim().length === 0
+    ) {
+      alert("Invalid Data");
+      return;
+    }
 
     const sendFeedback = async () => {
       await fetch(
@@ -55,7 +63,7 @@ const HomePage = () => {
       );
     };
     sendFeedback();
-
+    setIsFeedbackGiven(true);
     setTimeout(() => {
       setIsFeedbackGiven(false);
     }, 3000);
