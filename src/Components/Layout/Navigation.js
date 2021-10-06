@@ -23,11 +23,13 @@ const Navigation = () => {
               <Link to="/menu">Menu</Link>
             </li>
             <li>
-              <Link to="/">About Us</Link>
+              <Link to="/aboutus">About Us</Link>
             </li>
-            <li>
-              <Link to="/tablebooking">Book a Table </Link>
-            </li>
+            {authCtx.isLoggedIn && (
+              <li>
+                <Link to="/tablebooking">Book a Table </Link>
+              </li>
+            )}
             {!authCtx.isLoggedIn && (
               <li>
                 <Link to="/login">Login</Link>

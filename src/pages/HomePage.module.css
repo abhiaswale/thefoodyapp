@@ -34,11 +34,16 @@
   border: 2px solid white;
   background: transparent;
   padding: 8px;
+  transition: 1s;
+}
+.headerbutton:hover {
+  color: black;
+  background-color: white;
 }
 
 .columnwrapper {
   background-color: rgb(224, 241, 188);
-  height: 165px;
+  height: 200px;
   padding: 90px 125px;
   display: flex;
   justify-content: center;
@@ -49,6 +54,7 @@
   font-size: 1.3rem;
   font-weight: 900;
 }
+
 .column {
   text-align: center;
 }
@@ -59,17 +65,25 @@
 
 .contactwrapper h1 {
   text-align: center;
+  font-size: 2rem;
+  background-color: aqua;
 }
 
 .addresswrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 12px 130px;
+  gap: 160px;
+  padding: 0px 130px 40px;
+  height: 360px;
+}
+.addresswrapper address {
+  line-height: 1.5rem;
 }
 
 .addressform input {
   font-family: inherit;
   font-size: 1rem;
+  width: 100%;
   padding: 6px 4px;
   color: rgb(7, 7, 7);
   margin-top: 46px;
@@ -82,7 +96,6 @@
 }
 
 .send {
-  text-align: center;
   font-family: inherit;
   cursor: pointer;
   margin-top: 45px;
@@ -90,10 +103,25 @@
   border: transparent;
   font-size: 1rem;
   padding: 7px 12px;
+  transition: 0.5s;
+}
+
+.send:hover {
+  color: white;
+  background-color: black;
+}
+.sendDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .address address {
   margin-bottom: 25px;
+}
+.footer {
+  background-color: aqua;
+  padding: 12px 0px 12px 0px;
 }
 
 .iconswrapper {
@@ -124,5 +152,5 @@
 .copyrightwrapper {
   font-size: 0.8rem;
   text-align: center;
-  margin-bottom: 18px;
+  /* margin-bottom: 18px; */
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./HomePage.module.css";
 import {
   GiKnifeFork,
@@ -13,7 +13,63 @@ import {
   AiFillFacebook,
   AiFillInstagram,
 } from "react-icons/ai";
+import { useHistory } from "react-router";
 const HomePage = () => {
+  const history = useHistory();
+  const [isFeedbackGiven, setIsFeedbackGiven] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [msg, setMsg] = useState("");
+
+  const getStarterdHandler = (e) => {
+    e.preventDefault();
+    history.push("/menu");
+  };
+  const nameChangeHandler = (e) => {
+    setName(e.target.value);
+  };
+  const emailChangeHandler = (e) => {
+    setEmail(e.target.value);
+  };
+  const msgChangeHandler = (e) => {
+    setMsg(e.target.value);
+  };
+
+  const feedBackHandler = (e) => {
+    e.preventDefault();
+    setIsFeedbackGiven(true);
+    console.log(name, email, msg);
+
+    const sendFeedback = async () => {
+      await fetch(
+        "https://foodyproject-baf67-default-rtdb.firebaseio.com/contactus.json",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            message: msg,
+          }),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    };
+    sendFeedback();
+
+    setTimeout(() => {
+      setIsFeedbackGiven(false);
+    }, 3000);
+
+    setEmail("");
+    setName("");
+    setMsg("");
+  };
+
+  let content;
+  if (isFeedbackGiven) {
+    console.log("feedback sent successfully");
+    content = <h1>Thank You for your feedback</h1>;
+  }
   return (
     <div>
       <div className={classes.bg}>
@@ -22,7 +78,9 @@ const HomePage = () => {
           Food is as much about the moment, the occasion, the location and the
           company as it is about the taste.
         </p>
-        <button className={classes.headerbutton}>Get Started!</button>
+        <button onClick={getStarterdHandler} className={classes.headerbutton}>
+          Get Started!
+        </button>
       </div>
       <section className={classes.features}>
         <div className={classes.columnwrapper}>
@@ -60,13 +118,13 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <div>
+      <div className={classes.map}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5633.503182277999!2d73.80081686567132!3d19.991665527522077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeae340b32e15%3A0xcf37e8d2529426e4!2sDomino&#39;s%20Pizza!5e0!3m2!1sen!2sin!4v1633413780686!5m2!1sen!2sin"
           style={{
             width: "100%",
-            height: "450",
-            style: "border:0;",
+            height: "450px",
+
             allowfullscreen: "",
             loading: "lazy",
           }}
@@ -76,22 +134,29 @@ const HomePage = () => {
       <section className={classes.contactwrapper}>
         <h1>Contact Us</h1>
         <div className={classes.addresswrapper}>
-          <form className={classes.addressform}>
-            <input type="text" placeholder="Name" />
+          <form className={classes.addressform} onSubmit={feedBackHandler}>
+            <input
+              type="text"
+              placeholder="Name"
+              onChange={nameChangeHandler}
+              value={name}
+            />
             <input
               type="email"
               placeholder="Email"
-              style={{ marginLeft: "15px" }}
+              onChange={emailChangeHandler}
+              value={email}
             />
             <input
               type="text"
               placeholder="Message"
-              style={{ width: "auto" }}
-              size="46"
+              onChange={msgChangeHandler}
+              value={msg}
             />
-            <div>
+            <div className={classes.sendDiv}>
               <button className={classes.send}>Send</button>
             </div>
+            <div>{content}</div>
           </form>
           <div className={classes.address}>
             <h3>Address</h3>
@@ -115,7 +180,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <footer>
+      <footer className={classes.footer}>
         <div className={classes.footericon}>
           <a href="/">
             <AiFillFacebook />

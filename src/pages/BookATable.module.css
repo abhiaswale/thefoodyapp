@@ -5,7 +5,8 @@
   background-size: cover;
   position: relative;
 }
-.book {
+.book,
+.successfullReservation {
   width: 35em;
   height: 43rem;
   position: absolute;

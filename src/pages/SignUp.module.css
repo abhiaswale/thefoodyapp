@@ -27,12 +27,12 @@
 .inputdiv {
   margin-top: 15px;
 }
-.signup label,
-p {
-  color: rgb(12, 9, 9);
+.signup label {
+  color: rgb(255, 255, 255);
 }
 
 .signup input {
+  font-family: inherit;
   font-size: 1rem;
   padding: 6px 4px;
   color: white;

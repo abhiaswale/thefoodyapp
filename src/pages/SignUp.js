@@ -125,7 +125,7 @@ const SignUp = () => {
           {!isSigningUp && <button>Sign Up</button>}
           {isSigningUp && <button>Signing you up...</button>}
         </div>
-        <p>
+        <p style={{ color: "white" }}>
           Existing user? <Link to="/login">Login</Link>
         </p>
       </form>

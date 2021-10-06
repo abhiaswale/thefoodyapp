@@ -37,3 +37,12 @@
   font-size: 2.6rem;
   margin-top: -20px;
 }
+
+.menuLoading {
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  transform: translate(-120%, -145%);
+}

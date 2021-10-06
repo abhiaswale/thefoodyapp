@@ -9,6 +9,7 @@ import { useContext } from "react";
 import AuthContext from "./store/auth-context";
 import BookATable from "./pages/BookATable";
 import Menu from "./Components/Menu/Menu";
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -28,13 +29,17 @@ function App() {
           <Route path="/menu">
             <Menu />
           </Route>
-
+          <Route path="/aboutus">
+            <AboutUs />
+          </Route>
           <Route path="/landingpage">
             {authCtx.isLoggedIn && <LandingPage />}
             {!authCtx.isLoggedIn && <Redirect to="/login" />}
           </Route>
+
           <Route path="/tablebooking">
-            <BookATable />
+            {authCtx.isLoggedIn && <BookATable />}
+            {!authCtx.isLoggedIn && <Redirect to="/login" />}
           </Route>
 
           <Route path="*">

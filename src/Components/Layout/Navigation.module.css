@@ -26,8 +26,12 @@
 .header a {
   text-decoration: none;
   color: white;
+  transition: 0.5s;
 }
 
+.header a:hover {
+  color: black;
+}
 .b1 {
   background: transparent;
   cursor: pointer;

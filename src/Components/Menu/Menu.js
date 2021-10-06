@@ -3,6 +3,7 @@ import classes from "./Menu.module.css";
 import MenuItem from "./MenuItem";
 const Menu = () => {
   const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchMeals = async () => {
@@ -24,6 +25,7 @@ const Menu = () => {
       }
       console.log(loadedMeals);
       setMeals(loadedMeals);
+      setIsLoading(false);
     };
 
     fetchMeals().catch((err) => alert(err.message));
@@ -38,17 +40,21 @@ const Menu = () => {
       price={meal.price}
     />
   ));
+
   return (
     <div className={classes.bg}>
-      <div className={classes.content}>
-        <div className={classes.menuheader}>
-          <p>Find</p>
-          <span>Our Menu</span>
+      {!isLoading && (
+        <div className={classes.content} loading="lazy">
+          <div className={classes.menuheader}>
+            <p>Find</p>
+            <span>Our Menu</span>
+          </div>
+          <div className={classes.menu}>
+            <ul>{mealList}</ul>
+          </div>
         </div>
-        <div className={classes.menu}>
-          <ul>{mealList}</ul>
-        </div>
-      </div>
+      )}
+      {isLoading && <p className={classes.menuLoading}>Loading...</p>}
     </div>
   );
 };

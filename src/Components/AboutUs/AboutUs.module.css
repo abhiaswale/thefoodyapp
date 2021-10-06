@@ -1,0 +1,7 @@
+.bg {
+  background-image: url("../../images/aboutus.jpg");
+  width: 100%;
+  height: 716px;
+  background-size: cover;
+  position: relative;
+}

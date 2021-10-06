@@ -83,7 +83,6 @@ const Login = () => {
             console.log(err);
           });
       });
-
     // console.log(enteredEmail, enteredPassword);
   };
   return (
