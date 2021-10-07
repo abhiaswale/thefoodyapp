@@ -30,7 +30,7 @@
 }
 
 .header a:hover {
-  color: black;
+  color: rgb(225, 228, 49);
 }
 .b1 {
   background: transparent;
@@ -39,4 +39,7 @@
   font-family: inherit;
   border: none;
   color: white;
+}
+b1:hover {
+  text-decoration-color: yellow;
 }

@@ -1,8 +1,12 @@
 import classes from "./AboutUs.module.css";
 import AboutusImg from "../../images/1.jpg";
 import Footer from "../Layout/Footer";
-console.log(AboutusImg);
+import { useHistory } from "react-router";
 const AboutUs = () => {
+  const history = useHistory();
+  const bookTable = () => {
+    history.push("./tablebooking");
+  };
   return (
     <div>
       <div className={classes.bg}>
@@ -51,7 +55,7 @@ const AboutUs = () => {
       </section>
       <div className={classes.banner}>
         <p>WE MAKE DELICIOUS AND NUTRITIOUS FOOD </p>
-        <button>Book a Table</button>
+        <button onClick={bookTable}>Book a Table</button>
       </div>
       <Footer />
     </div>

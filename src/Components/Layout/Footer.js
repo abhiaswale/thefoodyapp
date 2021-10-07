@@ -19,7 +19,7 @@ const Footer = () => {
           <AiFillInstagram />
         </a>
       </div>
-      <div class={classes.copyrightwrapper}>&copy;All Rights Reserved</div>
+      <div className={classes.copyrightwrapper}>&copy;All Rights Reserved</div>
     </footer>
   );
 };

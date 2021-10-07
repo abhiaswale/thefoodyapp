@@ -5,8 +5,7 @@
   background-size: cover;
   position: relative;
 }
-.book,
-.successfullReservation {
+.book {
   width: 35em;
   height: 43rem;
   position: absolute;
@@ -54,4 +53,10 @@ select {
   border: transparent;
   font-size: 1.2rem;
   padding: 7px 12px;
+}
+
+.successfullReservation p {
+  text-align: center;
+  height: 40px;
+  color: rgb(221, 224, 28);
 }

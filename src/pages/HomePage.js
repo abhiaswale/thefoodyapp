@@ -137,7 +137,9 @@ const HomePage = () => {
         ></iframe>
       </div>
       <section className={classes.contactwrapper}>
-        <h1>Contact Us</h1>
+        <div className={classes.banner}>
+          <p>CONTACT US</p>
+        </div>
         <div className={classes.addresswrapper}>
           <form className={classes.addressform} onSubmit={feedBackHandler}>
             <input
@@ -161,7 +163,7 @@ const HomePage = () => {
             <div className={classes.sendDiv}>
               <button className={classes.send}>Send</button>
             </div>
-            <div>{content}</div>
+            <div style={{ textAlign: "center" }}>{content}</div>
           </form>
           <div className={classes.address}>
             <h3>Address</h3>

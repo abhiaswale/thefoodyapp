@@ -31,12 +31,14 @@
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  background-color: black;
 }
 .aboutusContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: contain;
   width: 65%;
+  color: white;
   margin-top: 0px;
 }
 .aboutusContent img {

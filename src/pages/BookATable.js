@@ -1,7 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import classes from "./BookATable.module.css";
 const BookATable = () => {
-  let revData;
+  const [isBooking, setIsBooking] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const fNameRef = useRef("");
   const emailRef = useRef("");
@@ -11,6 +12,7 @@ const BookATable = () => {
   const messageRef = useRef("");
 
   const submitHandler = (e) => {
+    setIsBooking(true);
     e.preventDefault();
     const enteredFName = fNameRef.current.value;
     const enteredEmail = emailRef.current.value;
@@ -19,23 +21,50 @@ const BookATable = () => {
     const enteredDate = dateRef.current.value;
     const enteredMessage = messageRef.current.value;
 
-    revData = (
-      <div className={classes.successfullReservation}>
-        <h3>Congrats!!,{enteredFName}</h3>
-        <p>
-          Your Reservation for {enteredPersons} on {enteredEmail} is Successfull
-        </p>
-      </div>
-    );
+    if (
+      enteredFName.trim().length === 0 &&
+      enteredEmail.trim().length === 0 &&
+      enteredPhoneNo.trim().length === 0 &&
+      enteredPersons.trim().length === 0 &&
+      enteredDate.trim().length === 0
+    ) {
+      setIsFormValid(false);
+      alert("Please Fill All fields");
+      return;
+    }
 
-    console.log(
-      enteredFName,
-      enteredEmail,
-      enteredPhoneNo,
-      enteredPersons,
-      enteredDate,
-      enteredMessage
-    );
+    setTimeout(() => {
+      setIsFormValid(true);
+    }, 2000);
+    const bookingData = async () => {
+      const response = await fetch(
+        "https://foodyproject-baf67-default-rtdb.firebaseio.com/bookings.json",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            fullName: enteredFName,
+            email: enteredEmail,
+            phoneNo: enteredPhoneNo,
+            persons: enteredPersons,
+            date: enteredDate,
+            message: enteredMessage,
+          }),
+        }
+      );
+      if (!response.ok) {
+        throw new Error("There was some error processing your request");
+      }
+      // setIsFormValid(true);
+
+      setIsBooking(false);
+      // setTimeout(() => {
+      //   setIsFormValid(false);
+      // }, 5000);
+    };
+
+    bookingData().catch((err) => {
+      alert(err.message);
+    });
   };
 
   return (
@@ -101,10 +130,15 @@ const BookATable = () => {
             </div>
           </div>
           <div className={classes.center}>
-            <button>Make reservation</button>
+            {!isBooking && <button>Make reservation!</button>}
+            {isBooking && <button>Hang on,Booking a Table...</button>}
           </div>
         </div>
-        <div> {revData}</div>
+        {isFormValid && (
+          <div className={classes.successfullReservation}>
+            <p>Booked successfully</p>
+          </div>
+        )}
       </form>
     </div>
   );

@@ -63,10 +63,15 @@
   font-size: 2rem;
 }
 
-.contactwrapper h1 {
-  text-align: center;
+.banner {
   font-size: 2rem;
-  background-color: aqua;
+  background-color: rgb(146, 13, 13);
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+.banner p {
+  color: white;
+  font-weight: 900;
 }
 
 .addresswrapper {
@@ -118,39 +123,4 @@
 
 .address address {
   margin-bottom: 25px;
-}
-.footer {
-  background-color: aqua;
-  padding: 12px 0px 12px 0px;
-}
-
-.iconswrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  margin-top: 10px;
-}
-.iconswrapper div {
-  display: flex;
-  align-content: center;
-  gap: 5px;
-}
-
-.footericon {
-  display: flex;
-  justify-content: center;
-  gap: 52px;
-  font-size: 2rem;
-  margin: 25px 0px 25px 0px;
-}
-
-.footericon a {
-  color: black;
-  text-decoration: none;
-}
-
-.copyrightwrapper {
-  font-size: 0.8rem;
-  text-align: center;
-  /* margin-bottom: 18px; */
 }
