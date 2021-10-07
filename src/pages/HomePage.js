@@ -8,11 +8,8 @@ import {
 } from "react-icons/gi";
 import { FiPhone } from "react-icons/fi";
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
-import {
-  AiFillTwitterCircle,
-  AiFillFacebook,
-  AiFillInstagram,
-} from "react-icons/ai";
+import Footer from "../Components/Layout/Footer";
+
 import { useHistory } from "react-router";
 const HomePage = () => {
   const history = useHistory();
@@ -188,20 +185,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <footer className={classes.footer}>
-        <div className={classes.footericon}>
-          <a href="/">
-            <AiFillFacebook />
-          </a>
-          <a href="/">
-            <AiFillTwitterCircle />
-          </a>
-          <a href="/">
-            <AiFillInstagram />
-          </a>
-        </div>
-        <div class={classes.copyrightwrapper}>&copy;All Rights Reserved</div>
-      </footer>
+      <Footer />
     </div>
   );
 };
