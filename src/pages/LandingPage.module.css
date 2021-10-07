@@ -1,10 +1,35 @@
+.bg {
+  background-image: url("../images/aboutus.jpg");
+  position: relative;
+  height: 721px;
+  background-size: cover;
+}
+
 .p {
-  position: absolute;
-  top: 120px;
-  left: 50px;
   font-size: 3rem;
+}
+.landing {
+  position: absolute;
+  top: 62%;
+  left: 30%;
+  transform: translate(-50%, -100%);
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 .p span {
   font-weight: 900;
+  color: rgb(226, 226, 49);
 }
+
+.main {
+  font-weight: 900;
+
+  color: white;
+  font-size: 2rem;
+}
+
+/* .menu {
+  display: flex;
+  justify-content: start;
+} */

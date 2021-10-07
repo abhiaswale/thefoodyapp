@@ -8,10 +8,18 @@ const LandingPage = () => {
   console.log(authCtx.userName);
 
   return (
-    <div className={classes.p}>
-      <p>
-        Welcome, <span>{authCtx.userName}</span>
-      </p>
+    <div className={classes.bg}>
+      <div className={classes.landing}>
+        <p className={classes.p}>
+          Welcome, <span>{authCtx.userName}!!</span>
+        </p>
+        <div className={classes.main}>
+          <p>Explore Our Menu</p>
+          <div className={classes.menu}>
+            <button>Menu</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
