@@ -9,8 +9,10 @@
   background-color: rgba(12, 12, 12, 0.568);
   padding: 5px 88.3px;
 }
-.title {
+.title p {
+  font-size: 2rem;
   color: white;
+  font-weight: bolder;
 }
 
 .header ul {
@@ -42,4 +44,17 @@
 }
 b1:hover {
   text-decoration-color: yellow;
+}
+
+@media (max-width: 786px) {
+  .header {
+    padding: 10px;
+  }
+  .title p {
+    font-size: 1rem;
+  }
+  .header ul {
+    display: none;
+    font-size: 0.8rem;
+  }
 }

@@ -11,7 +11,7 @@ const Navigation = () => {
   return (
     <header className={classes.header}>
       <div className={classes.title}>
-        <h1>The Food Project </h1>
+        <p>The Food Project </p>
       </div>
       <div>
         <nav>

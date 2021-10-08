@@ -54,3 +54,29 @@
   font-size: 1.2rem;
   padding: 7px 12px;
 }
+@media (max-width: 768px) {
+  .bg {
+    height: 800px;
+  }
+  .signup h2 {
+    color: white;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .signup {
+    width: 14rem;
+    height: 29rem;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -63%);
+    padding: 26px 32px;
+  }
+  .signup input,
+  label {
+    font-size: 1rem;
+  }
+  .signup button {
+    font-size: 1rem;
+  }
+}

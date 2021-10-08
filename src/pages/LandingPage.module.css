@@ -24,12 +24,38 @@
 
 .main {
   font-weight: 900;
-
+  margin-top: -55px;
   color: white;
   font-size: 2rem;
+}
+.menu button {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border: 2px solid white;
+  background: transparent;
+  padding: 8px;
+  transition: 1s;
+}
+.menu button:hover {
+  color: black;
+  background-color: white;
 }
 
 /* .menu {
   display: flex;
   justify-content: start;
 } */
+@media (max-width: 768px) {
+  .bg {
+    height: 740px;
+  }
+
+  .landing {
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+}

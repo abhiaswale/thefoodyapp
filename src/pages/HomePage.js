@@ -99,7 +99,7 @@ const HomePage = () => {
           </div>
           <div className={classes.column}>
             <GiFlatfish style={{ fontSize: "3rem" }} />
-            <p className={classes.ico}>FRESH SEA FOODS</p>
+            <p className={classes.ico}>SEA FOODS</p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.

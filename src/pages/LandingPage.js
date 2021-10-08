@@ -1,12 +1,17 @@
 import { useContext } from "react";
+import { useHistory } from "react-router";
 import AuthContext from "../store/auth-context";
 import classes from "./LandingPage.module.css";
 
 const LandingPage = () => {
   const authCtx = useContext(AuthContext);
+  const history = useHistory();
   console.log(authCtx.isLoggedIn);
   console.log(authCtx.userName);
 
+  const menuButttonHandler = () => {
+    history.push("/menu");
+  };
   return (
     <div className={classes.bg}>
       <div className={classes.landing}>
@@ -16,7 +21,7 @@ const LandingPage = () => {
         <div className={classes.main}>
           <p>Explore Our Menu</p>
           <div className={classes.menu}>
-            <button>Menu</button>
+            <button onClick={menuButttonHandler}>Menu</button>
           </div>
         </div>
       </div>

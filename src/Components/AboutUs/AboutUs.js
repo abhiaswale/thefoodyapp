@@ -52,6 +52,37 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
+        {/* ////////////////////// */}
+        <div className={classes.aboutusContent1}>
+          <div>
+            <div>{<img src={AboutusImg} alt="img" />}</div>
+            <div>
+              <p>
+                <h1>Fried Egg and Bread Platter</h1>
+                volutpat odio facilisis mauris sit amet massa vitae tortor
+                condimentum lacinia quis vel eros donec ac odio tempor orci
+                dapibus ultrices in iaculis nunc sed augue lacus viverra vitae
+                congueneque aliquam vestibulum morbi blandit cursus risus at
+                ultrices mi tempus imperdiet nulla malesuada pellentesque elit
+                eget gravida cum sociis
+              </p>
+            </div>
+          </div>
+          <div>
+            <div>{<img src={AboutusImg} alt="img" />}</div>
+            <div>
+              <p>
+                <h1>Fried Egg and Bread Platter</h1>
+                volutpat odio facilisis mauris sit amet massa vitae tortor
+                condimentum lacinia quis vel eros donec ac odio tempor orci
+                dapibus ultrices in iaculis nunc sed augue lacus viverra vitae
+                congueneque aliquam vestibulum morbi blandit cursus risus at
+                ultrices mi tempus imperdiet nulla malesuada pellentesque elit
+                eget gravida cum sociis
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
       <div className={classes.banner}>
         <p>WE MAKE DELICIOUS AND NUTRITIOUS FOOD </p>

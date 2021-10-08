@@ -46,3 +46,27 @@
   left: 46%;
   transform: translate(-120%, -145%);
 }
+
+@media (max-width: 786px) {
+  .bg {
+    height: 950px;
+  }
+  .content {
+    top: 63%;
+    left: 35%;
+    transform: translate(-35%, -60%);
+    position: absolute;
+  }
+  .menuheader p {
+    margin: 0;
+    padding: 0;
+    color: red;
+    font-family: "Allura", cursive;
+    font-size: 2rem;
+  }
+  .menuheader span {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    margin-top: -20px;
+  }
+}
