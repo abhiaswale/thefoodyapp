@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import classes from "./Navigation.module.css";
 import AuthContext from "../../store/auth-context";
 import { useContext } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+
 const Navigation = () => {
   const authCtx = useContext(AuthContext);
   const logoutHandler = () => {
@@ -11,7 +13,7 @@ const Navigation = () => {
   return (
     <header className={classes.header}>
       <div className={classes.title}>
-        <p>The Food Project </p>
+        <a href="/">The Food Project </a>
       </div>
       <div>
         <nav>
@@ -49,6 +51,10 @@ const Navigation = () => {
             )}
           </ul>
         </nav>
+      </div>
+
+      <div>
+        <GiHamburgerMenu />
       </div>
     </header>
   );

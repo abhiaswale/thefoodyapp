@@ -7,9 +7,9 @@
   position: absolute;
   z-index: 1;
   background-color: rgba(12, 12, 12, 0.568);
-  padding: 5px 88.3px;
+  padding: 20px 88.3px;
 }
-.title p {
+.title a {
   font-size: 2rem;
   color: white;
   font-weight: bolder;
@@ -34,6 +34,7 @@
 .header a:hover {
   color: rgb(225, 228, 49);
 }
+
 .b1 {
   background: transparent;
   cursor: pointer;
@@ -50,7 +51,7 @@ b1:hover {
   .header {
     padding: 10px;
   }
-  .title p {
+  .title a {
     font-size: 1rem;
   }
   .header ul {
