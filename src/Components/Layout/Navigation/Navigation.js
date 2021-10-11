@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import classes from "./Navigation.module.css";
-import AuthContext from "../../store/auth-context";
+import AuthContext from "../../../store/auth-context";
 import { useContext, useState } from "react";
 import { RiMenuFill, RiCloseFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const authCtx = useContext(AuthContext);
@@ -21,8 +21,7 @@ const Navigation = () => {
   const closeIcon = (
     <RiCloseFill className={classes.open} onClick={toggleHandler} />
   );
-
-  const NavLinks = (
+  const NavLink = (
     <div>
       <nav>
         <ul>
@@ -67,11 +66,11 @@ const Navigation = () => {
       <div className={classes.title}>
         <a href="/">The Food Project </a>
       </div>
-      <div className={classes.bigNav}>{NavLinks}</div>
+      <div className={classes.bigNav}>{NavLink}</div>
 
       <div className={classes.mobileNav}>
         {sideBar ? closeIcon : openIcon}
-        {sideBar && <div>{NavLinks}</div>}
+        {sideBar && <div>{NavLink}</div>}
       </div>
     </header>
   );
