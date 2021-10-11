@@ -1,0 +1,18 @@
+.btn {
+}
+
+.btn button {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border: 2px solid white;
+  background: transparent;
+  padding: 8px;
+  transition: 1s;
+}
+
+.btn button:hover {
+  color: black;
+  background-color: white;
+}

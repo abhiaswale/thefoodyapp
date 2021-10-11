@@ -11,6 +11,7 @@ import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
 import Footer from "../Components/Layout/Footer";
 
 import { useHistory } from "react-router";
+import Button from "../Components/Ui/Button";
 const HomePage = () => {
   const history = useHistory();
   const [isFeedbackGiven, setIsFeedbackGiven] = useState(false);
@@ -83,9 +84,10 @@ const HomePage = () => {
           Food is as much about the moment, the occasion, the location and the
           company as it is about the taste.
         </p>
-        <button onClick={getStarterdHandler} className={classes.headerbutton}>
-          Get Started!
-        </button>
+
+        <div className={classes.headerbutton}>
+          <Button onClick={getStarterdHandler}>Get Started!</Button>
+        </div>
       </div>
       <section className={classes.features}>
         <div className={classes.columnwrapper}>

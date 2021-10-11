@@ -2,6 +2,7 @@ import classes from "./AboutUs.module.css";
 import AboutusImg from "../../images/1.jpg";
 import Footer from "../Layout/Footer";
 import { useHistory } from "react-router";
+import Button from "../Ui/Button";
 const AboutUs = () => {
   const history = useHistory();
   const bookTable = () => {
@@ -86,7 +87,7 @@ const AboutUs = () => {
       </section>
       <div className={classes.banner}>
         <p>WE MAKE DELICIOUS AND NUTRITIOUS FOOD </p>
-        <button onClick={bookTable}>Book a Table</button>
+        <Button onClick={bookTable}>Book a Table</Button>
       </div>
       <Footer />
     </div>
