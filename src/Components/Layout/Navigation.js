@@ -1,14 +1,32 @@
 import { Link } from "react-router-dom";
 import classes from "./Navigation.module.css";
 import AuthContext from "../../store/auth-context";
-import { useContext } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { useContext, useState } from "react";
+import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 
 const Navigation = () => {
   const authCtx = useContext(AuthContext);
   const logoutHandler = () => {
     authCtx.logut();
   };
+  const [sideBar, setsideBar] = useState(false);
+
+  const toggleHandler = () => {
+    setsideBar(!sideBar);
+    console.log(sideBar);
+  };
+  const openIcon = (
+    <RiMenuFill className={classes.open} onClick={toggleHandler} />
+  );
+  const closeIcon = (
+    <RiCloseFill className={classes.open} onClick={toggleHandler} />
+  );
+
+  const mobileNav = (
+    <ul>
+      <h1 className={classes.h1}>Hii</h1>
+    </ul>
+  );
 
   return (
     <header className={classes.header}>
@@ -53,8 +71,9 @@ const Navigation = () => {
         </nav>
       </div>
 
-      <div>
-        <GiHamburgerMenu />
+      <div className={classes.mobileNav}>
+        {sideBar ? closeIcon : openIcon}
+        {sideBar && mobileNav}
       </div>
     </header>
   );
