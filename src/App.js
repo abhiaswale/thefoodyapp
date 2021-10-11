@@ -10,7 +10,6 @@ import AuthContext from "./store/auth-context";
 import BookATable from "./pages/BookATable";
 import Menu from "./Components/Menu/Menu";
 import AboutUs from "./Components/AboutUs/AboutUs";
-
 function App() {
   const authCtx = useContext(AuthContext);
   return (

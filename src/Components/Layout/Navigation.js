@@ -22,10 +22,44 @@ const Navigation = () => {
     <RiCloseFill className={classes.open} onClick={toggleHandler} />
   );
 
-  const mobileNav = (
-    <ul>
-      <h1 className={classes.h1}>Hii</h1>
-    </ul>
+  const NavLinks = (
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/menu">Menu</Link>
+          </li>
+          <li>
+            <Link to="/aboutus">About Us</Link>
+          </li>
+          {authCtx.isLoggedIn && (
+            <li>
+              <Link to="/tablebooking">Book a Table </Link>
+            </li>
+          )}
+          {!authCtx.isLoggedIn && (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          )}
+          {authCtx.isLoggedIn && (
+            <li>
+              <button className={classes.b1} onClick={logoutHandler}>
+                Logout
+              </button>
+            </li>
+          )}
+          {!authCtx.isLoggedIn && (
+            <li>
+              <Link to="/signup">Signup</Link>
+            </li>
+          )}
+        </ul>
+      </nav>
+    </div>
   );
 
   return (
@@ -33,47 +67,11 @@ const Navigation = () => {
       <div className={classes.title}>
         <a href="/">The Food Project </a>
       </div>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/menu">Menu</Link>
-            </li>
-            <li>
-              <Link to="/aboutus">About Us</Link>
-            </li>
-            {authCtx.isLoggedIn && (
-              <li>
-                <Link to="/tablebooking">Book a Table </Link>
-              </li>
-            )}
-            {!authCtx.isLoggedIn && (
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-            )}
-            {authCtx.isLoggedIn && (
-              <li>
-                <button className={classes.b1} onClick={logoutHandler}>
-                  Logout
-                </button>
-              </li>
-            )}
-            {!authCtx.isLoggedIn && (
-              <li>
-                <Link to="/signup">Signup</Link>
-              </li>
-            )}
-          </ul>
-        </nav>
-      </div>
+      <div className={classes.bigNav}>{NavLinks}</div>
 
       <div className={classes.mobileNav}>
         {sideBar ? closeIcon : openIcon}
-        {sideBar && mobileNav}
+        {sideBar && <div>{NavLinks}</div>}
       </div>
     </header>
   );

@@ -47,35 +47,42 @@ b1:hover {
   text-decoration-color: yellow;
 }
 
-.hamburger {
-  display: none;
-}
 .mobileNav {
   display: none;
 }
 
 @media (max-width: 786px) {
+  .bigNav {
+    display: none;
+  }
   .header {
     padding: 10px;
   }
   .title a {
     font-size: 1rem;
   }
+
   .header ul {
-    display: none;
-    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    position: absolute;
+    /* width: 100%; */
+    top: 41.8%;
+    right: -18%;
+    transform: translate(-49%, 11%);
+    background-color: rgba(12, 12, 12, 0.568);
+  }
+  .header li {
+    margin: 2px 2px 2px 2px;
+    padding: 10px 36px;
   }
 
   .mobileNav {
     display: flex;
-    justify-content: center;
   }
 
-  .h1 {
-    color: aliceblue;
-    position: relative;
-  }
-
+  /* BUTTON STYLES */
   .open {
     color: white;
     font-size: 1.3rem;
