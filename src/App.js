@@ -1,15 +1,15 @@
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import SignUp from "./pages/SignUp";
-import Login from "./pages/Login";
 import Layout from "./Components/Layout/Layout";
-import LandingPage from "./pages/LandingPage";
 import { useContext } from "react";
 import AuthContext from "./store/auth-context";
-import BookATable from "./pages/BookATable";
+import BookATable from "./Components/Booking/BookATable";
 import Menu from "./Components/Menu/Menu";
 import AboutUs from "./Components/AboutUs/AboutUs";
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
+import Landing from "./pages/Landing";
+import Home from "./pages/Home";
 function App() {
   const authCtx = useContext(AuthContext);
   return (
@@ -17,13 +17,13 @@ function App() {
       <Layout>
         <Switch>
           <Route path="/" exact>
-            <HomePage />
+            <Home />
           </Route>
           <Route path="/login">
-            <Login />
+            <LoginPage />
           </Route>
           <Route path="/signup">
-            <SignUp />
+            <SignUpPage />
           </Route>
           <Route path="/menu">
             <Menu />
@@ -32,7 +32,7 @@ function App() {
             <AboutUs />
           </Route>
           <Route path="/landingpage">
-            {authCtx.isLoggedIn && <LandingPage />}
+            {authCtx.isLoggedIn && <Landing />}
             {!authCtx.isLoggedIn && <Redirect to="/login" />}
           </Route>
 

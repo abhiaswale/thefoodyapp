@@ -23,7 +23,6 @@ const Menu = () => {
           price: data[key].price,
         });
       }
-      console.log(loadedMeals);
       setMeals(loadedMeals);
       setIsLoading(false);
     };

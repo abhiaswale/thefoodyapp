@@ -7,7 +7,7 @@ const MenuItem = (props) => {
         <div>{props.name}</div>
         <h3>{props.description}</h3>
       </section>
-      <h3>₹ {props.price}</h3>
+      <h3 className={classes.price}>₹ {props.price}</h3>
     </div>
   );
 };

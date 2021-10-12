@@ -2,10 +2,10 @@ import React, { useContext, useRef, useState } from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import classes from "./Login.module.css";
-import AuthContext from "../store/auth-context";
+import AuthContext from "../../store/auth-context";
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
-  // const [userData, setUserData] = useState({});
+
   const authCtx = useContext(AuthContext);
 
   const history = useHistory();
@@ -123,7 +123,7 @@ const Login = () => {
         </div>
         <p style={{ color: "white" }}>
           New user? <Link to="/signup">Signup</Link>
-          <Link to="/landingpage"> landing Page</Link>
+          {/* <Link to="/landingpage"> landing Page</Link> */}
         </p>
       </form>
     </div>

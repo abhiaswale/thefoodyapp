@@ -20,4 +20,11 @@
     grid-template-columns: 4fr 1fr;
     gap: 40px;
   }
+  .main section div {
+    color: rgb(229, 255, 0);
+    font-size: 1rem;
+  }
+  .price {
+    font-size: 0.8rem;
+  }
 }

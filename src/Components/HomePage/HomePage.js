@@ -8,10 +8,9 @@ import {
 } from "react-icons/gi";
 import { FiPhone } from "react-icons/fi";
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
-import Footer from "../Components/Layout/Footer";
-
+import Footer from "../../Components/Layout/Footer";
 import { useHistory } from "react-router";
-import Button from "../Components/Ui/Button";
+import Button from "../../Components/Ui/Button";
 const HomePage = () => {
   const history = useHistory();
   const [isFeedbackGiven, setIsFeedbackGiven] = useState(false);

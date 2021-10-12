@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useHistory } from "react-router";
-import Button from "../Components/Ui/Button";
-import AuthContext from "../store/auth-context";
+import Button from "../Ui/Button";
+import AuthContext from "../../store/auth-context";
 import classes from "./LandingPage.module.css";
 
 const LandingPage = () => {

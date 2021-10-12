@@ -48,6 +48,10 @@
   width: 100%;
   height: 100%;
 }
+.aboutusheading {
+  font-weight: 900;
+  font-size: 2rem;
+}
 
 .aboutusContent p {
   line-height: 1.2rem;
@@ -107,6 +111,10 @@
     height: 100%;
   }
 
+  .aboutusheading {
+    font-weight: 900;
+    font-size: 1rem;
+  }
   .aboutusContent1 p {
     line-height: 1rem;
     padding: 15px;

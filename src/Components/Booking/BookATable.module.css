@@ -1,5 +1,5 @@
 .bg {
-  background-image: url("../images/reservationbg.jpg");
+  background-image: url("../../images/reservationbg.jpg");
   width: 100%;
   height: 900px;
   background-size: cover;
@@ -64,7 +64,7 @@ select {
 
 @media (max-width: 768px) {
   .bg {
-    background-image: url("../images/reservationbg.jpg");
+    background-image: url("../../images/reservationbg.jpg");
     width: 100%;
     height: 875px;
     background-size: cover;

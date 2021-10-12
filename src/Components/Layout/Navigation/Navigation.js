@@ -1,5 +1,5 @@
 import classes from "./Navigation.module.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 import Navlinks from "./Navlinks";
 import { motion } from "framer-motion";
@@ -9,7 +9,6 @@ const Navigation = () => {
 
   const toggleHandler = () => {
     setsideBar(!sideBar);
-    console.log(sideBar);
   };
   const openIcon = (
     <RiMenuFill className={classes.open} onClick={toggleHandler} />
@@ -21,6 +20,16 @@ const Navigation = () => {
   const closeMobileMenu = () => {
     setsideBar(false);
   };
+  let menuRef = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setsideBar(false);
+      }
+    });
+  });
+
   return (
     <header className={classes.header}>
       <div className={classes.title}>
@@ -32,7 +41,7 @@ const Navigation = () => {
         <Navlinks />
       </div>
 
-      <div className={classes.mobileNav}>
+      <div ref={menuRef} className={classes.mobileNav}>
         {sideBar ? closeIcon : openIcon}
         {sideBar && <Navlinks isMobile={true} close={closeMobileMenu} />}
       </div>
