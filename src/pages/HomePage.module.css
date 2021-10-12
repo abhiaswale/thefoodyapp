@@ -116,6 +116,9 @@
   justify-content: center;
   align-items: center;
 }
+.feedback {
+  text-align: center;
+}
 
 .address address {
   margin-bottom: 25px;
@@ -168,6 +171,9 @@
 
   .column text {
     font-size: 1rem;
+  }
+  .feedback {
+    font-size: 0.6rem;
   }
   .addresswrapper {
     display: grid;

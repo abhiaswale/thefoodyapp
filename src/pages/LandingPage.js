@@ -21,9 +21,7 @@ const LandingPage = () => {
         </p>
         <div className={classes.main}>
           <p>Explore Our Menu</p>
-          {/* <div className={classes.menu}>
-            <button onClick={menuButttonHandler}>Menu</button>
-          </div> */}
+
           <Button onClick={menuButttonHandler}>Menu</Button>
         </div>
       </div>

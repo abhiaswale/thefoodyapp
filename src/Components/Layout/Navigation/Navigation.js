@@ -2,6 +2,8 @@ import classes from "./Navigation.module.css";
 import { useState } from "react";
 import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 import Navlinks from "./Navlinks";
+import { motion } from "framer-motion";
+
 const Navigation = () => {
   const [sideBar, setsideBar] = useState(false);
 
@@ -22,7 +24,9 @@ const Navigation = () => {
   return (
     <header className={classes.header}>
       <div className={classes.title}>
-        <a href="/">The Food Project </a>
+        <motion.a whileHover={{ x: 10 }} href="/">
+          The Food Project
+        </motion.a>
       </div>
       <div className={classes.bigNav}>
         <Navlinks />

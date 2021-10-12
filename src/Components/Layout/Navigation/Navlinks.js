@@ -2,7 +2,12 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../../store/auth-context";
 import classes from "./Navlinks.module.css";
+import { motion } from "framer-motion";
+
 function Navlinks(props) {
+  const animateFrom = { opacity: 0, y: -40 };
+  const animateTo = { opacity: 1, y: 0 };
+
   const authCtx = useContext(AuthContext);
   const logoutHandler = () => {
     authCtx.logut();
@@ -14,36 +19,71 @@ function Navlinks(props) {
     <div>
       <nav>
         <ul>
-          <li onClick={mobileClick}>
+          <motion.li
+            initial={animateFrom}
+            animate={animateTo}
+            transition={{ delay: 0.05 }}
+            onClick={mobileClick}
+          >
             <Link to="/">Home</Link>
-          </li>
-          <li onClick={mobileClick}>
+          </motion.li>
+          <motion.li
+            initial={animateFrom}
+            animate={animateTo}
+            transition={{ delay: 0.1 }}
+            onClick={mobileClick}
+          >
             <Link to="/menu">Menu</Link>
-          </li>
-          <li onClick={mobileClick}>
+          </motion.li>
+          <motion.li
+            initial={animateFrom}
+            animate={animateTo}
+            transition={{ delay: 0.2 }}
+            onClick={mobileClick}
+          >
             <Link to="/aboutus">About Us</Link>
-          </li>
+          </motion.li>
           {authCtx.isLoggedIn && (
-            <li onClick={mobileClick}>
+            <motion.li
+              initial={animateFrom}
+              animate={animateTo}
+              transition={{ delay: 0.3 }}
+              onClick={mobileClick}
+            >
               <Link to="/tablebooking">Book a Table </Link>
-            </li>
+            </motion.li>
           )}
           {!authCtx.isLoggedIn && (
-            <li onClick={mobileClick}>
+            <motion.li
+              initial={animateFrom}
+              animate={animateTo}
+              transition={{ delay: 0.4 }}
+              onClick={mobileClick}
+            >
               <Link to="/login">Login</Link>
-            </li>
+            </motion.li>
           )}
           {authCtx.isLoggedIn && (
-            <li onClick={mobileClick}>
+            <motion.li
+              initial={animateFrom}
+              animate={animateTo}
+              transition={{ delay: 0.5 }}
+              onClick={mobileClick}
+            >
               <button className={classes.b1} onClick={logoutHandler}>
                 Logout
               </button>
-            </li>
+            </motion.li>
           )}
           {!authCtx.isLoggedIn && (
-            <li onClick={mobileClick}>
+            <motion.li
+              initial={animateFrom}
+              animate={animateTo}
+              transition={{ delay: 0.6 }}
+              onClick={mobileClick}
+            >
               <Link to="/signup">Signup</Link>
-            </li>
+            </motion.li>
           )}
         </ul>
       </nav>

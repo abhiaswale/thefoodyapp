@@ -165,7 +165,7 @@ const HomePage = () => {
             <div className={classes.sendDiv}>
               <button className={classes.send}>Send</button>
             </div>
-            <div style={{ textAlign: "center" }}>{content}</div>
+            <div className={classes.feedback}>{content}</div>
           </form>
           <div className={classes.address}>
             <h3>Address</h3>
