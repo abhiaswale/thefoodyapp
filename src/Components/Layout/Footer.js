@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   AiFillTwitterCircle,
   AiFillFacebook,
@@ -9,15 +10,24 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.footericon}>
-        <a href="/">
+        <motion.a
+          whileHover={{ scale: 1.2, color: "rgb(230, 111, 111)", delay: 1 }}
+          href="/"
+        >
           <AiFillFacebook />
-        </a>
-        <a href="/">
+        </motion.a>
+        <motion.a
+          whileHover={{ scale: 1.2, color: "rgb(230, 111, 111)", delay: 1 }}
+          href="/"
+        >
           <AiFillTwitterCircle />
-        </a>
-        <a href="/">
+        </motion.a>
+        <motion.a
+          whileHover={{ scale: 1.2, color: "rgb(230, 111, 111)", delay: 1 }}
+          href="/"
+        >
           <AiFillInstagram />
-        </a>
+        </motion.a>
       </div>
       <div className={classes.copyrightwrapper}>&copy;All Rights Reserved</div>
     </footer>

@@ -78,7 +78,7 @@
     height: 283px;
     background-size: cover;
     position: relative;
-    transform: skewY(-6deg);
+    transform: skewY(0deg);
     transform-origin: top left;
   }
   .aboutus {
@@ -87,11 +87,12 @@
     font-weight: 900;
     top: 52%;
     left: 60%;
-    transform: skewY(6deg);
+    transform: skewY(0deg);
     position: absolute;
   }
   .aboutusHeader {
     font-size: 2rem;
+    margin-top: 5px;
   }
   .aboutusContent {
     display: none;

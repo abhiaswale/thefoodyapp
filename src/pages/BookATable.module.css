@@ -4,6 +4,7 @@
   height: 900px;
   background-size: cover;
   position: relative;
+  color: rgb(230, 111, 111);
 }
 .book {
   width: 35em;
