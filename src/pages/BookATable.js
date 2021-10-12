@@ -1,8 +1,11 @@
 import { useRef, useState } from "react";
+import { useHistory } from "react-router";
 import classes from "./BookATable.module.css";
 const BookATable = () => {
   const [isBooking, setIsBooking] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isBooked, setisBooked] = useState(false);
+  const history = useHistory();
 
   const fNameRef = useRef("");
   const emailRef = useRef("");
@@ -12,7 +15,6 @@ const BookATable = () => {
   const messageRef = useRef("");
 
   const submitHandler = (e) => {
-    setIsBooking(true);
     e.preventDefault();
     const enteredFName = fNameRef.current.value;
     const enteredEmail = emailRef.current.value;
@@ -54,17 +56,18 @@ const BookATable = () => {
       if (!response.ok) {
         throw new Error("There was some error processing your request");
       }
-      // setIsFormValid(true);
-
-      setIsBooking(false);
-      // setTimeout(() => {
-      //   setIsFormValid(false);
-      // }, 5000);
+      setisBooked(true);
+      setIsBooking(true);
     };
 
     bookingData().catch((err) => {
       alert(err.message);
     });
+    setIsBooking(false);
+
+    setTimeout(() => {
+      history.push("/menu");
+    }, 3000);
   };
 
   return (
@@ -134,7 +137,7 @@ const BookATable = () => {
             {isBooking && <button>Hang on,Booking a Table...</button>}
           </div>
         </div>
-        {isFormValid && (
+        {isFormValid && isBooked && (
           <div className={classes.successfullReservation}>
             <p>Booked successfully</p>
           </div>

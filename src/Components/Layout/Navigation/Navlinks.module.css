@@ -1,0 +1,11 @@
+.b1 {
+  background: transparent;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  color: white;
+}
+b1:hover {
+  text-decoration-color: yellow;
+}

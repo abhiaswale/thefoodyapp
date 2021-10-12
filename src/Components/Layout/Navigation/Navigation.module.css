@@ -35,18 +35,6 @@
   color: rgb(225, 228, 49);
 }
 
-.b1 {
-  background: transparent;
-  cursor: pointer;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  color: white;
-}
-b1:hover {
-  text-decoration-color: yellow;
-}
-
 .mobileNav {
   display: none;
 }
@@ -71,7 +59,7 @@ b1:hover {
     top: 41.8%;
     right: -18%;
     transform: translate(-49%, 11%);
-    background-color: rgba(12, 12, 12, 0.568);
+    background-color: rgba(12, 12, 12, 0.89);
   }
   .header li {
     margin: 2px 2px 2px 2px;
