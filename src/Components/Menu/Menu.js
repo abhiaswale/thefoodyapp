@@ -53,7 +53,7 @@ const Menu = () => {
           </div>
         </div>
       )}
-      {isLoading && <p className={classes.menuLoading}>Loading...</p>}
+      {isLoading && <p className={classes.menuLoading}>Loading....</p>}
     </div>
   );
 };
