@@ -37,7 +37,7 @@ const Login = () => {
         } else {
           return res.json().then((data) => {
             console.log(data);
-            // let errorMessage = "Something went wrong";
+            // let errorMessage = "Something went wrong"
             let errorMessage = data.error.message;
             throw new Error(errorMessage);
           });
