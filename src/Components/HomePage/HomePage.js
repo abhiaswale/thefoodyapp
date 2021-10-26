@@ -180,7 +180,6 @@ const HomePage = () => {
                 <HiOutlineMail /> contact@foody.com
               </div>
               <div>
-                {/*  */}
                 <HiOutlineLocationMarker /> Street,some city,India
               </div>
             </div>
