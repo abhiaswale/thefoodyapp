@@ -118,7 +118,7 @@ const BookATable = () => {
           </div>
           <div className={classes.inputdiv}>
             <div>
-              <label htmlFor="date">Date </label>
+              <label htmlFor="date">Date</label>
             </div>
             <div>
               <input type="date" id="date" ref={dateRef} />
@@ -133,7 +133,7 @@ const BookATable = () => {
             </div>
           </div>
           <div className={classes.center}>
-            {!isBooking && <button>Make reservation!</button>}
+            {!isBooking && <button>Make Reservation</button>}
             {isBooking && <button>Hang on,Booking a Table...</button>}
           </div>
         </div>
