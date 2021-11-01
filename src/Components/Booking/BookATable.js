@@ -124,6 +124,7 @@ const BookATable = () => {
               <input type="date" id="date" ref={dateRef} />
             </div>
           </div>
+          {/*  */}
           <div className={classes.inputdiv}>
             <div>
               <label htmlFor="msg">Your Message</label>
